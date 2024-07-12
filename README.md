@@ -22,7 +22,7 @@
 
 <h3>General rules</h3>
 
-<h4>Compiling</h4>
+**Compiling**
 
 - Compile your code with c++ and the flags -Wall -Wextra -Werror
 
@@ -30,7 +30,7 @@
 
 <br /><br />
 
-<h4>Formatting and naming conventions</h4>
+**Formatting and naming conventions**
 
 - The exercise directories will be named this way: ex00, ex01, ... , exn
 
@@ -45,7 +45,7 @@ ClassName.hpp/ClassName.h, ClassName.cpp, or ClassName.tpp. Then, if you have a 
 
 <br /><br />
 
-<h4>Allowed/Forbidden</h4>
+**Allowed/Forbidden**
 
 You are not coding in C anymore. Time to C++! Therefore:
 
@@ -59,7 +59,7 @@ You are not coding in C anymore. Time to C++! Therefore:
 
 <br /><br />
 
-<h4>A few design requirements</h4>
+**A few design requirements**
 
 - Memory leakage occurs in C++ too. When you allocate memory (by using the new keyword), you must avoid **memory leaks**.
 
@@ -71,7 +71,7 @@ You are not coding in C anymore. Time to C++! Therefore:
 
 <br /><br />
 
-<h4>Read me</h4>
+**Read me**
 
 - You can add some additional files if you need to (i.e., to split your code). As these assignments are not verified by a program, feel free to do so as long as you turn in the mandatory files.
 
@@ -353,13 +353,13 @@ You can pass this module without doing exercise 06.
 
 <h3>Reglas generales</h3>
 
-<h4>Compilando</h4>
+**Compilando**
 
 - Compila tu código con c++ y los flags -Wall -Wextra -Werror
 
 - Su código aún debería compilarse si agrega el flag -std=c++98
 
-<h4>Convenciones de formato y nomenclatura</h4>
+**Convenciones de formato y nomenclatura**
 
 - Los directorios de ejercicios se denominarán de esta forma: ex00, ex01, ... , exn
 
@@ -374,7 +374,7 @@ ClassName.hpp/ClassName.h, ClassName.cpp o ClassName.tpp. Luego, si tiene un arc
 
 <br /><br />
 
-<h4>Permitido/Prohibido</h4>
+**Permitido/Prohibido**
 
 Ya no estás codificando en C. ¡Es hora de C++! Por lo tanto:
 
@@ -388,7 +388,7 @@ Ya no estás codificando en C. ¡Es hora de C++! Por lo tanto:
 
 <br /><br />
 
-<h4>Algunos requisitos de diseño</h4>
+**Algunos requisitos de diseño**
 
 - La pérdida de memoria también ocurre en C++. Cuando asigna memoria (usando la nueva palabra clave), debe evitar **pérdidas de memoria**.
 
@@ -400,7 +400,7 @@ Ya no estás codificando en C. ¡Es hora de C++! Por lo tanto:
 
 <br /><br />
 
-<h4>Léeme</h4>
+**Léeme**
 
 - Puede agregar algunos archivos adicionales si es necesario (es decir, dividir su código). Como estas asignaciones no están verificadas por un programa, no dude en hacerlo siempre que entregue los archivos obligatorios.
 
@@ -707,7 +707,7 @@ Any of these means that you must flag the project as Forbidden Function:
 
 The goal of this exercise is to understand how to allocate memory in C++.
 
-<h4>Makefile and tests</h4>
+**Makefile and tests**
 
 There is a Makefile that compiles using the appropriate flags.
 
@@ -715,7 +715,7 @@ There is at least a main to test the exercise.
 
 <br /><br />
 
-<h4>Zombie Class</h4>
+**Zombie Class**
 
 There is a Zombie Class.
 It has a private name attribute.
@@ -725,7 +725,7 @@ The destructor prints a debug message that includes the name of the zombie.
 
 <br /><br />
 
-<h4>newZombie</h4>
+**newZombie**
 
 There is a newZombie() function prototyped as: [ Zombie* newZombie( std::string name ); ]
 It should allocate a Zombie on the heap and return it.
@@ -736,7 +736,7 @@ The zombie is deleted correctly before the end of the program.
 
 <br /><br />
 
-<h4>randomChump</h4>
+**randomChump**
 
 There is a randomChump() function prototyped as: [ void randomChump( std::string name ); ]
 It should create a Zombie on the stack, and make it announce itself.
@@ -752,14 +752,14 @@ The goal of this exercise is to allocate a number of objects at the same time us
 
 <br /><br />
 
-<h4>Makefile and tests</h4>
+**Makefile and tests**
 
 There is a Makefile that compiles using the appropriate flags.
 There is at least a main to test the exercise.
 
 <br /><br />
 
-<h4>zombieHorde</h4>
+**zombieHorde**
 
 The Zombie Class has a default constructor.
 There is a zombieHorde() function prototyped as: [ Zombie* zombieHorde( int N, std::string name ); ]
@@ -780,14 +780,14 @@ Demystify references! Demystify references! Demystify references! Demystify refe
 
 <br /><br />
 
-<h4>Makefile and tests</h4>
+**Makefile and tests**
 
 There is a Makefile that compiles using the appropriate flags.
 There is at least a main to test the exercise.
 
 <br /><br />
 
-<h4>HI THIS IS BRAIN</h4>
+**HI THIS IS BRAIN**
 
 There is a string containing "HI THIS IS BRAIN".
 stringPTR is a pointer to the string.
@@ -805,21 +805,21 @@ The objective of this exercise is to understand that pointers and references pre
 
 <br /><br />
 
-<h4>Makefile and tests</h4>
+**Makefile and tests**
 
 There is a Makefile that compiles using the appropriate flags.
 There is at least a main to test the exercise.
 
 <br /><br />
 
-<h4>Weapon</h4>
+**Weapon**
 
 There is a Weapon class that has a type string, a getType() and a setType().
 The getType() function returns a const reference to the type string.
 
 <br /><br />
 
-<h4>HumanA and HumanB</h4>
+**HumanA and HumanB**
 
 HumanA can have a reference or a pointer to the Weapon.
 Ideally, it should be implemented as a reference, since the Weapon exists from creation until destruction, and never changes.
@@ -835,14 +835,14 @@ Thanks to this exercise, the student should have gotten familiar with ifstream a
 
 <br /><br />
 
-<h4>Makefile and tests</h4>
+**Makefile and tests**
 
 There is a Makefile that compiles using the appropriate flags.
 There is at least a main to test the exercise.
 
 <br /><br />
 
-<h4>ex04</h4>
+**ex04**
 
 There is a function replace (or other name) that works as specified in the subject.
 The error management is efficient: try to pass a file that does not exist, change the permissions, pass it empty, etc.
@@ -861,14 +861,14 @@ The goal of this exercise is to use pointers to class member functions. Also, th
 
 <br /><br />
 
-<h4>Makefile and tests</h4>
+**Makefile and tests**
 
 There is a Makefile that compiles using the appropriate flags.
 There is at least a main to test the exercise.
 
 <br /><br />
 
-<h4>Our beloved Karen</h4>
+**Our beloved Karen**
 
 There is a class Karen with at least the 5 functions required in the subject.
 The function complain() executes the other functions using a pointer to them.
@@ -886,14 +886,14 @@ Now that you are experienced coders, you should use new instruction types, state
 
 <br /><br />
 
-<h4>Makefile and tests</h4>
+**Makefile and tests**
 
 There is a Makefile that compiles using the appropriate flags.
 There is at least a main to test the exercise.
 
 <br /><br />
 
-<h4>Switching Karen Off</h4>
+**Switching Karen Off**
 
 The program karenFilter takes as argument any of the log levels ("DEBUG", "INFO",  "WARNING" or "ERROR"). It should then display just the messages that are at the same level or above (DEBUG < INFO < WARNING < ERROR). This must be implemented using a switch statement with a default case.
 Once again, no if/elseif/else anymore please.
@@ -936,7 +936,7 @@ El objetivo de este ejercicio es comprender cómo asignar memoria en C++.
 
 <br /><br />
 
-<h4>Makefile y pruebas</h4>
+**Makefile y pruebas**
 
 Hay un Makefile que se compila usando los flags apropiados.
 
@@ -944,7 +944,7 @@ Hay al menos un principal para probar el ejercicio.
 
 <br /><br />
 
-<h4>Zombie Class</h4>
+**Zombie Class**
 
 Hay una clase zombie.
 Tiene un atributo de nombre privado.
@@ -954,7 +954,7 @@ El destructor imprime un mensaje de depuración que incluye el nombre del zombie
 
 <br /><br />
 
-<h4>newZombie</h4>
+**newZombie**
 
 Hay una función newZombie() cuyo prototipo es: [ Zombie* newZombie( std::string name ); ]
 Debería asignar un zombi al montón y devolverlo.
@@ -965,7 +965,7 @@ El zombie se elimina correctamente antes de que finalice el programa.
 
 <br /><br />
 
-<h4>randomChump</h4>
+**randomChump**
 
 Hay una función randomChump() cuyo prototipo es: [ void randomChump( std::string name ); ]
 Debería crear un zombi en la pila y hacer que se anuncie.
@@ -983,14 +983,14 @@ El objetivo de este ejercicio es asignar varios objetos al mismo tiempo usando n
 
 <br /><br />
 
-<h4>Makefile y pruebas</h4>
+**Makefile y pruebas**
 
 Hay un Makefile que se compila usando los flags apropiados.
 Hay al menos un principal para probar el ejercicio.
 
 <br /><br />
 
-<h4>zombieHorde</h4>
+**zombieHorde**
 
 La clase Zombie tiene un constructor predeterminado.
 Hay una función zombieHorde() cuyo prototipo es: [ Zombie* zombieHorde( int N, std::string name ); ]
@@ -1009,14 +1009,14 @@ Por último, todos los zombies deben eliminarse al mismo tiempo en el archivo pr
 
 <br /><br />
 
-<h4>Makefile y pruebas</h4>
+**Makefile y pruebas**
 
 Hay un Makefile que se compila usando los flags apropiados.
 Hay al menos un principal para probar el ejercicio.
 
 <br /><br />
 
-<h4>HI THIS IS BRAIN</h4>
+**HI THIS IS BRAIN**
 
 Hay un string que contiene "HI THIS IS BRAIN".
 stringPTR es un puntero al string.
@@ -1034,21 +1034,21 @@ El objetivo de este ejercicio es comprender que los punteros y referencias prese
 
 <br /><br />
 
-<h4>Makefile and tests</h4>
+**Makefile and tests**
 
 Hay un Makefile que se compila usando los flags apropiados.
 Hay al menos un main para probar el ejercicio.
 
 <br /><br />
 
-<h4>Weapon</h4>
+**Weapon**
 
 Hay una clase Weapon que tiene un tipo string, un getType() y un setType().
 La función getType() devuelve una referencia constante al tipo de string.
 
 <br /><br />
 
-<h4>HumanA and HumanB</h4>
+**HumanA and HumanB**
 
 HumanA puede tener una referencia o un puntero al Weapon.
 Lo ideal sería implementarlo como referencia, ya que el Weapon existe desde la creación hasta la destrucción y nunca cambia.
@@ -1064,14 +1064,14 @@ Gracias a este ejercicio, el alumno debería haberse familiarizado con ifstream 
 
 <br /><br />
 
-<h4>Makefile and tests</h4>
+**Makefile and tests**
 
 Hay un Makefile que se compila usando los flags apropiados.
 Hay al menos un main para probar el ejercicio.
 
 <br /><br />
 
-<h4>ex04</h4>
+**ex04**
 
 Hay una función de reemplazo (u otro nombre) que funciona como se especifica en el asunto.
 La gestión de errores es eficiente: intentar pasar un archivo que no existe, cambiar los permisos, pasarlo vacío, etc.
@@ -1090,14 +1090,14 @@ El objetivo de este ejercicio es utilizar punteros a funciones de miembros de cl
 
 <br /><br />
 
-<h4>Makefile and tests</h4>
+**Makefile and tests**
 
 Hay un Makefile que se compila usando los flags apropiados.
 Hay al menos un main para probar el ejercicio.
 
 <br /><br />
 
-<h4>Our beloved Karen</h4>
+**Our beloved Karen**
 
 Se cuenta con una clase Karen con al menos las 5 funciones requeridas en la subject.
 La función complain() ejecuta las otras funciones usando un puntero hacia ellas.
@@ -1115,14 +1115,14 @@ Ahora que eres codificador experimentado, deberías utilizar nuevos tipos de ins
 
 <br /><br />
 
-<h4>Makefile and tests</h4>
+**Makefile and tests**
 
 Hay un Makefile que se compila usando los flags apropiados.
 Hay al menos un main para probar el ejercicio.
 
 <br /><br />
 
-<h4>Switching Karen Off</h4>
+**Switching Karen Off**
 
 El programa karenFilter toma como argumento cualquiera de los niveles de registro ("DEBUG", "INFO", "WARNING" o "ERROR"). Luego debería mostrar solo los mensajes que están en el mismo nivel o superior (DEBUG <INFO <WARNING <ERROR). Esto debe implementarse mediante una declaración de cambio con un caso predeterminado.
 Una vez más, ya no if/elseif/else, por favor.
