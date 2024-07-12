@@ -940,7 +940,7 @@ El objetivo de este ejercicio es comprender cómo asignar memoria en C++.
 
 Hay un Makefile que se compila usando los flags apropiados.
 
-Hay al menos un principal para probar el ejercicio.
+Hay al menos un main para probar el ejercicio.
 
 <br /><br />
 
@@ -986,7 +986,7 @@ El objetivo de este ejercicio es asignar varios objetos al mismo tiempo usando n
 **Makefile y pruebas**
 
 Hay un Makefile que se compila usando los flags apropiados.
-Hay al menos un principal para probar el ejercicio.
+Hay al menos un main para probar el ejercicio.
 
 <br /><br />
 
@@ -999,7 +999,7 @@ Después de la asignación, se produce una inicialización de los objetos para e
 Devuelve un puntero al primer zombi.
 Hay suficientes pruebas en general para probar los puntos anteriores.
 Ej: llamar a announce() en todos los zombies.
-Por último, todos los zombies deben eliminarse al mismo tiempo en el archivo principal.
+Por último, todos los zombies deben eliminarse al mismo tiempo en el archivo main.
 
 <br /><br />
 
@@ -1012,7 +1012,7 @@ Por último, todos los zombies deben eliminarse al mismo tiempo en el archivo pr
 **Makefile y pruebas**
 
 Hay un Makefile que se compila usando los flags apropiados.
-Hay al menos un principal para probar el ejercicio.
+Hay al menos un main para probar el ejercicio.
 
 <br /><br />
 
