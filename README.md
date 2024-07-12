@@ -28,6 +28,8 @@
 
 - Your code should still compile if you add the flag -std=c++98
 
+<br /><br />
+
 <h4>Formatting and naming conventions</h4>
 
 - The exercise directories will be named this way: ex00, ex01, ... , exn
@@ -41,6 +43,8 @@ ClassName.hpp/ClassName.h, ClassName.cpp, or ClassName.tpp. Then, if you have a 
 
 - Goodbye Norminette! No coding style is enforced in the C++ modules. You can follow your favorite one. But keep in mind that a code your peer-evaluators can’t understand is a code they can’t grade. Do your best to write a clean and readable code.
 
+<br /><br />
+
 <h4>Allowed/Forbidden</h4>
 
 You are not coding in C anymore. Time to C++! Therefore:
@@ -53,6 +57,8 @@ You are not coding in C anymore. Time to C++! Therefore:
 
 - **You are allowed to use the STL in the Module 08 and 09 only**. That means: no **Containers** (vector/list/map/and so forth) and no **Algorithms** (anything that requires to include the <algorithm> header) until then. Otherwise, your grade will be -42.
 
+<br /><br />
+
 <h4>A few design requirements</h4>
 
 - Memory leakage occurs in C++ too. When you allocate memory (by using the new keyword), you must avoid **memory leaks**.
@@ -62,6 +68,8 @@ You are not coding in C anymore. Time to C++! Therefore:
 - Any function implementation put in a header file (except for function templates) means 0 to the exercise.
 
 - You should be able to use each of your headers independently from others. Thus, they must include all the dependencies they need. However, you must avoid the problem of double inclusion by adding **include guards**. Otherwise, your grade will be 0.
+
+<br /><br />
 
 <h4>Read me</h4>
 
@@ -364,6 +372,8 @@ ClassName.hpp/ClassName.h, ClassName.cpp o ClassName.tpp. Luego, si tiene un arc
 
 - ¡Adiós Norminette! No se aplica ningún estilo de codificación en los módulos de C++. Puedes seguir tu favorito. Pero tenga en cuenta que un código que sus pares evaluadores no pueden entender es un código que no pueden calificar. Haga todo lo posible para escribir un código limpio y legible.
 
+<br /><br />
+
 <h4>Permitido/Prohibido</h4>
 
 Ya no estás codificando en C. ¡Es hora de C++! Por lo tanto:
@@ -376,6 +386,8 @@ Ya no estás codificando en C. ¡Es hora de C++! Por lo tanto:
 
 - **Puedes usar el STL solo en los Módulos 08 y 09**. Eso significa: no hay **Contenedores** (vector/lista/mapa/etc.) ni **Algoritmos** (cualquier cosa que requiera incluir el encabezado <algoritmo>) hasta entonces. En caso contrario, tu nota será -42.
 
+<br /><br />
+
 <h4>Algunos requisitos de diseño</h4>
 
 - La pérdida de memoria también ocurre en C++. Cuando asigna memoria (usando la nueva palabra clave), debe evitar **pérdidas de memoria**.
@@ -385,6 +397,8 @@ Ya no estás codificando en C. ¡Es hora de C++! Por lo tanto:
 - Cualquier implementación de función colocada en un archivo de encabezado (excepto las plantillas de función) significa 0 para el ejercicio.
 
 - Deberías poder utilizar cada uno de tus encabezados independientemente de los demás. Por tanto, deben incluir todas las dependencias que necesiten. Sin embargo, debes evitar el problema de la doble inclusión agregando **include guards**. En caso contrario su calificación será 0.
+
+<br /><br />
 
 <h4>Léeme</h4>
 
@@ -699,6 +713,8 @@ There is a Makefile that compiles using the appropriate flags.
 
 There is at least a main to test the exercise.
 
+<br /><br />
+
 <h4>Zombie Class</h4>
 
 There is a Zombie Class.
@@ -706,6 +722,8 @@ It has a private name attribute.
 It has at least a constructor.
 It has a member function announce( void ) that prints: ": BraiiiiiiinnnzzzZ..."
 The destructor prints a debug message that includes the name of the zombie.
+
+<br /><br />
 
 <h4>newZombie</h4>
 
@@ -716,6 +734,8 @@ The exercise should be marked as correct if the Zombie can announce itself with 
 There are tests to prove everything works.
 The zombie is deleted correctly before the end of the program.
 
+<br /><br />
+
 <h4>randomChump</h4>
 
 There is a randomChump() function prototyped as: [ void randomChump( std::string name ); ]
@@ -724,14 +744,20 @@ Ideally the zombie should be allocated on the stack (so implicitly deleted at th
 The student must justify their choices.
 There are tests to prove everything works.
 
+<br /><br />
+
 <h3>Ex01: Moar brainz!</h3>
 
 The goal of this exercise is to allocate a number of objects at the same time using new[], initialize them, and to properly delete them.
+
+<br /><br />
 
 <h4>Makefile and tests</h4>
 
 There is a Makefile that compiles using the appropriate flags.
 There is at least a main to test the exercise.
+
+<br /><br />
 
 <h4>zombieHorde</h4>
 
@@ -752,10 +778,14 @@ Last, all the zombies should be deleted at the same time in the main.
 
 Demystify references! Demystify references! Demystify references! Demystify references! Demystify references! Demystify references! Demystify references! Demystify references! Demystify references! Demystify references! Demystify references! Demystify references!
 
+<br /><br />
+
 <h4>Makefile and tests</h4>
 
 There is a Makefile that compiles using the appropriate flags.
 There is at least a main to test the exercise.
+
+<br /><br />
 
 <h4>HI THIS IS BRAIN</h4>
 
@@ -773,15 +803,21 @@ The string is displayed using the stringPTR and the stringREF.
 
 The objective of this exercise is to understand that pointers and references present some small differences that make them be more appropriated depending on the use and the lifecycle of the object used.
 
+<br /><br />
+
 <h4>Makefile and tests</h4>
 
 There is a Makefile that compiles using the appropriate flags.
 There is at least a main to test the exercise.
 
+<br /><br />
+
 <h4>Weapon</h4>
 
 There is a Weapon class that has a type string, a getType() and a setType().
 The getType() function returns a const reference to the type string.
+
+<br /><br />
 
 <h4>HumanA and HumanB</h4>
 
@@ -797,10 +833,14 @@ HumanB must have a pointer to a Weapon since the field is not set at creation ti
 
 Thanks to this exercise, the student should have gotten familiar with ifstream and ofstream.
 
+<br /><br />
+
 <h4>Makefile and tests</h4>
 
 There is a Makefile that compiles using the appropriate flags.
 There is at least a main to test the exercise.
+
+<br /><br />
 
 <h4>ex04</h4>
 
@@ -819,10 +859,14 @@ This is not C anymore!
 
 The goal of this exercise is to use pointers to class member functions. Also, this is the opportunity to discover to the different log levels.
 
+<br /><br />
+
 <h4>Makefile and tests</h4>
 
 There is a Makefile that compiles using the appropriate flags.
 There is at least a main to test the exercise.
+
+<br /><br />
 
 <h4>Our beloved Karen</h4>
 
@@ -840,10 +884,14 @@ The student could have chosen to change the message Karen displays or to display
 
 Now that you are experienced coders, you should use new instruction types, statements, loops, etc. The goal of this last exercise is to make you discover the switch statement.
 
+<br /><br />
+
 <h4>Makefile and tests</h4>
 
 There is a Makefile that compiles using the appropriate flags.
 There is at least a main to test the exercise.
+
+<br /><br />
 
 <h4>Switching Karen Off</h4>
 
@@ -886,11 +934,15 @@ Cualquiera de estos significa que debes marcar el proyecto como Función Prohibi
 
 El objetivo de este ejercicio es comprender cómo asignar memoria en C++.
 
+<br /><br />
+
 <h4>Makefile y pruebas</h4>
 
 Hay un Makefile que se compila usando los flags apropiados.
 
 Hay al menos un principal para probar el ejercicio.
+
+<br /><br />
 
 <h4>Zombie Class</h4>
 
@@ -900,6 +952,8 @@ Tiene al menos un constructor.
 Tiene una función miembro anunciar (void) que imprime: ": BraiiiiiiinnnzzzZ..."
 El destructor imprime un mensaje de depuración que incluye el nombre del zombie.
 
+<br /><br />
+
 <h4>newZombie</h4>
 
 Hay una función newZombie() cuyo prototipo es: [ Zombie* newZombie( std::string name ); ]
@@ -908,6 +962,8 @@ Idealmente, debería llamar al constructor que toma un string e inicializa el no
 El ejercicio debe marcarse como correcto si el Zombie puede anunciarse con el nombre pasado a la función.
 Hay pruebas para demostrar que todo funciona.
 El zombie se elimina correctamente antes de que finalice el programa.
+
+<br /><br />
 
 <h4>randomChump</h4>
 
@@ -925,10 +981,14 @@ Hay pruebas para demostrar que todo funciona.
 
 El objetivo de este ejercicio es asignar varios objetos al mismo tiempo usando new[], inicializarlos y eliminarlos correctamente.
 
+<br /><br />
+
 <h4>Makefile y pruebas</h4>
 
 Hay un Makefile que se compila usando los flags apropiados.
 Hay al menos un principal para probar el ejercicio.
+
+<br /><br />
 
 <h4>zombieHorde</h4>
 
@@ -941,14 +1001,20 @@ Hay suficientes pruebas en general para probar los puntos anteriores.
 Ej: llamar a announce() en todos los zombies.
 Por último, todos los zombies deben eliminarse al mismo tiempo en el archivo principal.
 
+<br /><br />
+
 <h3>Ex02: HI THIS IS BRAIN</h3>
 
 ¡Desmitifica las referencias! ¡Desmitifica las referencias! ¡Desmitifica las referencias! ¡Desmitifica las referencias! ¡Desmitifica las referencias! ¡Desmitifica las referencias! ¡Desmitifica las referencias! ¡Desmitifica las referencias! ¡Desmitifica las referencias! ¡Desmitifica las referencias! ¡Desmitifica las referencias! ¡Desmitifica las referencias!
+
+<br /><br />
 
 <h4>Makefile y pruebas</h4>
 
 Hay un Makefile que se compila usando los flags apropiados.
 Hay al menos un principal para probar el ejercicio.
+
+<br /><br />
 
 <h4>HI THIS IS BRAIN</h4>
 
@@ -966,15 +1032,21 @@ EL string se muestra utilizando stringPTR y stringREF.
 
 El objetivo de este ejercicio es comprender que los punteros y referencias presentan algunas pequeñas diferencias que los hacen más apropiados según el uso y el ciclo de vida del objeto utilizado.
 
+<br /><br />
+
 <h4>Makefile and tests</h4>
 
 Hay un Makefile que se compila usando los flags apropiados.
 Hay al menos un main para probar el ejercicio.
 
+<br /><br />
+
 <h4>Weapon</h4>
 
 Hay una clase Weapon que tiene un tipo string, un getType() y un setType().
 La función getType() devuelve una referencia constante al tipo de string.
+
+<br /><br />
 
 <h4>HumanA and HumanB</h4>
 
@@ -990,10 +1062,14 @@ HumanB debe tener un puntero a un Weapon ya que el campo no está configurado en
 
 Gracias a este ejercicio, el alumno debería haberse familiarizado con ifstream y ofstream.
 
+<br /><br />
+
 <h4>Makefile and tests</h4>
 
 Hay un Makefile que se compila usando los flags apropiados.
 Hay al menos un main para probar el ejercicio.
+
+<br /><br />
 
 <h4>ex04</h4>
 
@@ -1012,10 +1088,14 @@ La implementación de la función debe realizarse utilizando funciones de std::s
 
 El objetivo de este ejercicio es utilizar punteros a funciones de miembros de clase. Además, esta es la oportunidad de descubrir los diferentes niveles de registro.
 
+<br /><br />
+
 <h4>Makefile and tests</h4>
 
 Hay un Makefile que se compila usando los flags apropiados.
 Hay al menos un main para probar el ejercicio.
+
+<br /><br />
 
 <h4>Our beloved Karen</h4>
 
@@ -1033,10 +1113,14 @@ El estudiante pudo haber elegido cambiar el mensaje que muestra Karen o mostrar 
 
 Ahora que eres codificador experimentado, deberías utilizar nuevos tipos de instrucciones, sentencias, bucles, etc. El objetivo de este último ejercicio es hacerte descubrir la sentencia switch.
 
+<br /><br />
+
 <h4>Makefile and tests</h4>
 
 Hay un Makefile que se compila usando los flags apropiados.
 Hay al menos un main para probar el ejercicio.
+
+<br /><br />
 
 <h4>Switching Karen Off</h4>
 
