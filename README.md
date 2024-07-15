@@ -16,6 +16,22 @@
 >
 > - :white_check_mark: [Castellano](#evaluación)
 
+<br /><br />
+
+> Ficheros ex00  
+>
+> - :white_check_mark: [Makefile](#ex00-makefile) 
+>
+> - :white_check_mark: [main.cpp](#ex00-main)
+>
+> - :white_check_mark: [Zombie.h](#ex00-zombie h)
+>
+> - :white_check_mark: [Zombie.cpp](#ex00-zombie cpp)
+>
+> - :white_check_mark: [newZombie.cpp](#ex00-newZombie cpp)
+>
+> - :white_check_mark: [randomChump.cpp](#ex00-randomChump cpp)
+
 <br /><br /><br /><br />
 
 ## <h2>Subject English</h2>
@@ -1130,3 +1146,8 @@ Una vez más, ya no if/elseif/else, por favor.
 <br /><br />
 [:arrow_up::arrow_up::arrow_up::arrow_up::arrow_up: **subir** :arrow_up::arrow_up::arrow_up::arrow_up::arrow_up:](#cpp01)
 <br /><br />
+
+
+## Ficheros ex00
+
+hg
