@@ -1,86 +1,55 @@
 #include <iostream>    
 #include <string>
-#include <cstring>
 #include "Zombie.hpp"
 
-void fn_continue()
+int main(void)
 {
-    std::string  option;
+    std::cout << std::endl;
 
-    std::cout << "\nEnter to continue." << std::endl;
-    std::getline(std::cin, option);   
-}
+    Zombie uno;
+    std::cout << " Zombie uno se llama " << uno.getName() << std::endl;
+    uno.announce();
 
-bool isNumeric(const std::string& str)
-{
-  size_t i = 0;
+    Zombie dos("Michael");
+    std::cout << " Zombie dos se llama " << dos.getName() << std::endl;
+    dos.announce();
 
-  while (i < str.length())
-    if (!isdigit(str[i++]))
-      return false;
-  return true;
-}
+    Zombie tres(uno);
+    std::cout << std::endl << " Zombie tres se llama  " << tres.getName() << std::endl;
+    tres.announce();
 
-void ft_zombie(const std::string& newZombie)
-{
-    Zombie one(newZombie);
-    std::cout << "01 Zombie one is " << one.getName() << std::endl;
-    one.announce();
-}
+    tres = dos;
+    std::cout << std::endl << " Zombie tres se llama  " << tres.getName() << std::endl;
+    tres.announce();
 
-int main(int argc, char **argv)
-{
-    std::string  option; 
-    bool    running = true;
-    int     ioption = 0;
+    Zombie	*cuatro;
+    cuatro = newZombie("SATAN");
+    std::cout << std::endl << " Zombie cuatro se llama  " << cuatro << std::endl;
 
-    if (argc == 1)
-    {
-        Zombie one;
-        std::cout << "Zombie one name is " << one.getName() << std::endl;
-        one.announce();
-        Zombie two;
-        std::cout << "Zombie two name is " << two.getName() << std::endl;
-        two.announce();
-    }
-    else
-    {
-        if (strcmp(argv[1], "manual") == 0)
-        {
-            while(running)       
-            {
-                system("clear");
-                std::cout << "\nElige una opción:\n" << std::endl;
-                std::cout << " [1] Crea tu propio zombi.\n";
-                std::cout << " [4] Salir." << std::endl;
-                std::getline(std::cin, option);
-
-                if (isNumeric(option))
-                    ioption = stoi(option);       
-                switch(ioption)
-                {
-                    case 1:
-                        std::cout << "Name: ";
-                        std::getline(std::cin, option);
-                        ft_zombie(option);
-                        break;
-                    case 4:
-                        running = false;
-                        break;
-                    default:
-                        std::cout << "\nLa próxima vez prueba a poner un número de la lista.\n" << std::endl;
-                }
-                if (running)
-                    fn_continue();        
-            }
-            system("clear");
-        }
-        else
-            std::cout << "\nElige:\n\t\"./main\" para ejecutar automaticamente.n\t\"./main \"manual\"\" para ejecutar manualmente." << std::endl;
-    }
+    std::cout << std::endl;    
     return (0);            
 } 
+/*
 
+	std::cout << "memory direction of a is:" << &a << std::endl;
+	std::cout << "memory direction of b is:" << &b << std::endl;
+	std::cout << "memory direction of c is:" << &c << std::endl;
+
+	Zombie	*d = NULL;
+	std::cout << "memory direction of d is:" << d << std::endl;
+	d = newZombie("PACO");
+	std::cout << "memory direction of d is:" << d << std::endl;
+	Zombie *e = NULL;
+	std::cout << "memory direction of e is:" << e << std::endl;
+	e = d;
+	std::cout << "memory direction of e is:" << e << std::endl;
+	d->announce();
+	e->announce();
+	randomChump("randomChump");	
+	
+
+	delete d;
+*/
 
 /*
 Ex00: BraiiiiiiinnnzzzZ
