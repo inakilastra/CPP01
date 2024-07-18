@@ -1,10 +1,9 @@
-#Makefile randomChump.cpp
 # VARIABLES 
 NAME = main
 CC = c++
 CCFLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -rf
-SRCS = main.cpp Zombie.cpp newZombie.cpp
+SRCS = main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
 OBJS = ${SRCS:.cpp=.o}
 DEPS = ${SRCS:.cpp=.d}
 DEF_COLOR =     \033[0;39m
