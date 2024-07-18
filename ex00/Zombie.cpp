@@ -1,12 +1,23 @@
-#include "Zombie.h" 
+#include "Zombie.hpp" 
 
-Zombie::Zombie() {}  
-const std::string& Zombie::getName() const
-{
-    return Name_;
+Zombie::Zombie() : namePrivate("Unknown") 
+{  
+    std::cout <<  this->namePrivate << " zombie created" << std::endl;
 }
-
-void Zombie::setName(const std::string& Name) 
+Zombie::Zombie(std::string namePublic)
 {
-    Name_ = Name;
+	setName(namePublic);
+	std::cout << namePrivate << " zombie created" << std::endl;
+}
+void Zombie::announce(void)
+{
+    std::cout << namePrivate << ": BraiiiiiiinnnzzzZ..." << std::endl;
+}
+std::string Zombie::getName()
+{
+	return this->namePrivate;
+}
+void Zombie::setName(std::string namePublic)
+{
+	namePrivate = namePublic;
 }
