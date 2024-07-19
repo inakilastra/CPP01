@@ -24,13 +24,13 @@
 >
 > - :white_check_mark: [main.cpp](#ex00-main)
 >
-> - :white_check_mark: [Zombie.hpp](#ex00-zombie hpp)
+> - :white_check_mark: [Zombie.hpp](#ex00-zombie-hpp)
 >
-> - :white_check_mark: [Zombie.cpp](#ex00-zombie cpp)
+> - :white_check_mark: [Zombie.cpp](#ex00-zombie-cpp)
 >
-> - :white_check_mark: [newZombie.cpp](#ex00-newZombie cpp)
+> - :white_check_mark: [newZombie.cpp](#ex00-newZombie-cpp)
 >
-> - :white_check_mark: [randomChump.cpp](#ex00-randomChump cpp)
+> - :white_check_mark: [randomChump.cpp](#ex00-randomChump-cpp)
 
 <br /><br /><br /><br />
 
