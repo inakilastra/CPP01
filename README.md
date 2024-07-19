@@ -24,7 +24,7 @@
 >
 > - :white_check_mark: [main.cpp](#ex00-main)
 >
-> - :white_check_mark: [Zombie.h](#ex00-zombie h)
+> - :white_check_mark: [Zombie.hpp](#ex00-zombie hpp)
 >
 > - :white_check_mark: [Zombie.cpp](#ex00-zombie cpp)
 >
@@ -1234,3 +1234,55 @@ re: fclean all
 <br /><br />
 [:arrow_up::arrow_up::arrow_up::arrow_up::arrow_up: **subir** :arrow_up::arrow_up::arrow_up::arrow_up::arrow_up:](#cpp00)
 <br /><br />
+
+<h3>ex00 main</h3>
+
+```c++
+
+```
+
+<br /><br />
+[:arrow_up::arrow_up::arrow_up::arrow_up::arrow_up: **subir** :arrow_up::arrow_up::arrow_up::arrow_up::arrow_up:](#cpp00)
+<br /><br />
+
+<h3>ex00 Zombie hpp</h3>
+
+```c++
+
+```
+
+<br /><br />
+[:arrow_up::arrow_up::arrow_up::arrow_up::arrow_up: **subir** :arrow_up::arrow_up::arrow_up::arrow_up::arrow_up:](#cpp00)
+<br /><br />
+
+<h3>ex00 Zombie cpp</h3>
+
+```c++
+
+```
+
+<br /><br />
+[:arrow_up::arrow_up::arrow_up::arrow_up::arrow_up: **subir** :arrow_up::arrow_up::arrow_up::arrow_up::arrow_up:](#cpp00)
+<br /><br />
+
+<h3>ex00 newZombie cpp</h3>
+
+```c++
+
+```
+
+<br /><br />
+[:arrow_up::arrow_up::arrow_up::arrow_up::arrow_up: **subir** :arrow_up::arrow_up::arrow_up::arrow_up::arrow_up:](#cpp00)
+<br /><br />
+
+
+<h3>ex00 randomChump cpp</h3>
+
+```c++
+
+```
+
+<br /><br />
+[:arrow_up::arrow_up::arrow_up::arrow_up::arrow_up: **subir** :arrow_up::arrow_up::arrow_up::arrow_up::arrow_up:](#cpp00)
+<br /><br />
+   
