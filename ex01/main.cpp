@@ -1,5 +1,24 @@
+#include <iostream>    
+#include <string>
+#include <cstring>
+#include "Zombie.hpp"
 
+int main(int argc, char **argv)
+{
+    std::string  option; 
+    bool    running = true;
+    int     ioption = 0;
 
+    if (argc == 1)
+    {
+
+    }
+    else
+    {  
+        std::cout << "\nElige:\n\t\"./main\" para ejecutar automaticamente.n\t\"./main \"manual\"\" para ejecutar manualmente." << std::endl;
+    }    
+    return (0);            
+}              
 /*
 <h3>Exercise 01: Moar brainz!</h3>
 
