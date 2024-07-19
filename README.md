@@ -1232,7 +1232,7 @@ re: fclean all
 ```
 
 <br /><br />
-[:arrow_up::arrow_up::arrow_up::arrow_up::arrow_up: **subir** :arrow_up::arrow_up::arrow_up::arrow_up::arrow_up:](#cpp00)
+[:arrow_up::arrow_up::arrow_up::arrow_up::arrow_up: **subir** :arrow_up::arrow_up::arrow_up::arrow_up::arrow_up:](#cpp01)
 <br /><br />
 
 <h3>ex00 main</h3>
@@ -1242,7 +1242,7 @@ re: fclean all
 ```
 
 <br /><br />
-[:arrow_up::arrow_up::arrow_up::arrow_up::arrow_up: **subir** :arrow_up::arrow_up::arrow_up::arrow_up::arrow_up:](#cpp00)
+[:arrow_up::arrow_up::arrow_up::arrow_up::arrow_up: **subir** :arrow_up::arrow_up::arrow_up::arrow_up::arrow_up:](#cpp01)
 <br /><br />
 
 <h3>ex00 Zombie hpp</h3>
@@ -1252,7 +1252,7 @@ re: fclean all
 ```
 
 <br /><br />
-[:arrow_up::arrow_up::arrow_up::arrow_up::arrow_up: **subir** :arrow_up::arrow_up::arrow_up::arrow_up::arrow_up:](#cpp00)
+[:arrow_up::arrow_up::arrow_up::arrow_up::arrow_up: **subir** :arrow_up::arrow_up::arrow_up::arrow_up::arrow_up:](#cpp01)
 <br /><br />
 
 <h3>ex00 Zombie cpp</h3>
@@ -1262,7 +1262,7 @@ re: fclean all
 ```
 
 <br /><br />
-[:arrow_up::arrow_up::arrow_up::arrow_up::arrow_up: **subir** :arrow_up::arrow_up::arrow_up::arrow_up::arrow_up:](#cpp00)
+[:arrow_up::arrow_up::arrow_up::arrow_up::arrow_up: **subir** :arrow_up::arrow_up::arrow_up::arrow_up::arrow_up:](#cpp01)
 <br /><br />
 
 <h3>ex00 newZombie cpp</h3>
@@ -1272,7 +1272,7 @@ re: fclean all
 ```
 
 <br /><br />
-[:arrow_up::arrow_up::arrow_up::arrow_up::arrow_up: **subir** :arrow_up::arrow_up::arrow_up::arrow_up::arrow_up:](#cpp00)
+[:arrow_up::arrow_up::arrow_up::arrow_up::arrow_up: **subir** :arrow_up::arrow_up::arrow_up::arrow_up::arrow_up:](#cpp001)
 <br /><br />
 
 
@@ -1283,6 +1283,6 @@ re: fclean all
 ```
 
 <br /><br />
-[:arrow_up::arrow_up::arrow_up::arrow_up::arrow_up: **subir** :arrow_up::arrow_up::arrow_up::arrow_up::arrow_up:](#cpp00)
+[:arrow_up::arrow_up::arrow_up::arrow_up::arrow_up: **subir** :arrow_up::arrow_up::arrow_up::arrow_up::arrow_up:](#cpp01)
 <br /><br />
    
