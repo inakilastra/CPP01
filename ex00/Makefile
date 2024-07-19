@@ -19,7 +19,9 @@ $(NAME): $(OBJS)
 		@echo "\n${YELLOW} ✅ ${GREEN}$(NAME) $(DEF_COLOR)\n"
 		@echo "\n\tTests -- Pruebas\n"
 		@echo "\n ${ORANGE}Para despertar a los Zombies ejecuta:"
-		@echo "\n ▶️ ${GREEN} ./main$(DEF_COLOR)\n"
+		@echo "\n ▶️ ${GREEN} ./main\n"
+		@echo "\n ${ORANGE}Para crear Zombies personalizados ejecuta:"
+		@echo "\n ▶️ ${GREEN} ./main \"manual\"$(DEF_COLOR)\n"		
 all: $(NAME)
 -include ${DEPS}
 clean:
