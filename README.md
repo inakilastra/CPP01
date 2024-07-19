@@ -1238,7 +1238,133 @@ re: fclean all
 <h3>ex00 main</h3>
 
 ```c++
+#include <iostream>    
+#include <string>
+#include <cstring>
+#include "Zombie.hpp"
 
+void fn_continue()
+{
+    std::string  option;
+
+    std::cout << "\nEnter to continue." << std::endl;
+    std::getline(std::cin, option);   
+}
+
+bool isNumeric(const std::string& str)
+{
+  size_t i = 0;
+
+  while (i < str.length())
+    if (!isdigit(str[i++]))
+      return false;
+  return true;
+}
+
+int main(int argc, char **argv)
+{
+    std::string  option; 
+    bool    running = true;
+    int     ioption = 0;
+
+    if (argc == 1)
+    {
+        std::cout << std::endl;
+
+        Zombie uno;
+        std::cout << " Zombie uno se llama " << uno.getName() << std::endl;
+        uno.announce();
+        std::cout << " dirección de memoria: " << &uno << std::endl;
+        std::cout << std::endl;
+        Zombie dos("Michael");
+        std::cout << " Zombie dos se llama " << dos.getName() << std::endl;
+        dos.announce();
+        std::cout << " dirección de memoria: " << &dos << std::endl;
+        std::cout << std::endl;
+        Zombie tres(uno);
+        std::cout << " > Zombie tres(uno) " << std::endl;
+        std::cout << " Zombie tres se llama  " << tres.getName() << std::endl;
+        tres.announce();
+        std::cout << " dirección de memoria: " << &tres << std::endl;
+        std::cout << std::endl;
+        tres = dos;
+        std::cout << " > tres = dos " << std::endl;
+        std::cout << " Zombie tres se llama  " << tres.getName() << std::endl;
+        tres.announce();
+        std::cout << " dirección de memoria: " << &tres << std::endl;
+        std::cout << std::endl;
+        Zombie	*cuatro;
+        cuatro = newZombie("SATAN");
+        std::cout << " Zombie cuatro se llama  " << cuatro->getName() << std::endl;
+        std::cout << " dirección de memoria: " << &cuatro << std::endl;
+        std::cout << std::endl;
+        Zombie cinco(*cuatro);
+        std::cout << " > Zombie cinco(*cuatro) " << std::endl;
+        std::cout << " Zombie cinco se llama  " << cinco.getName() << std::endl;
+        cinco.announce();   
+        std::cout << " dirección de memoria: " << &cinco << std::endl;
+        std::cout << std::endl;
+        std::cout << " > Destruyo de manera manual al Zombie cuatro" << std::endl;
+        delete cuatro; 
+        std::cout << std::endl;
+        std::cout << " > Creo un Zombie en la pila que se autodestruye" << std::endl;
+        randomChump("inStack");
+        std::cout << "\n > El resto de Zombies se autodestruyen al salir" << std::endl;
+    }
+    else
+    {
+        if (strcmp(argv[1], "manual") == 0)
+        {
+            while(running)       
+            {
+                system("clear");
+                std::cout << "\nElige una opción:\n" << std::endl;
+                std::cout << " [1] Crea tu propio zombi sin nombre.\n";
+                std::cout << " [2] Crea tu propio zombi.\n";
+                std::cout << " [3] Crea tu propio zombi en Stack.\n";
+                std::cout << " [4] Salir." << std::endl;
+                std::getline(std::cin, option);
+
+                if (isNumeric(option))
+                    ioption = stoi(option);       
+                if (ioption == 1)
+                {
+                    Zombie one;
+                    std::cout << " Zombie se llama " << one.getName() << std::endl;
+                    one.announce();
+                    std::cout << " dirección de memoria: " << &one << std::endl;
+                    std::cout << std::endl;                                                
+                }              
+                else if (ioption == 2)
+                {
+                    std::cout << " Nombre Zombie personalizado: ";
+                    std::getline(std::cin, option);
+                    Zombie one(option);
+                    std::cout << " Zombie dos se llama " << one.getName() << std::endl;
+                    one.announce();
+                    std::cout << " dirección de memoria: " << &one << std::endl;
+                    std::cout << std::endl;                                                
+                }    
+                else if (ioption == 3)
+                {
+                    std::cout << " Nombre Zombie personalizado: ";
+                    std::getline(std::cin, option);
+                    randomChump(option);                                                
+                }                              
+                else if (ioption == 4)
+                    running = false;
+                else
+                    std::cout << "\nLa próxima vez prueba a poner un número de la lista.\n" << std::endl;
+                if (running)
+                    fn_continue();        
+            }
+            system("clear");
+        }
+        else
+            std::cout << "\nElige:\n\t\"./main\" para ejecutar automaticamente.n\t\"./main \"manual\"\" para ejecutar manualmente." << std::endl;
+    }    
+    return (0);            
+} 
 ```
 
 <br /><br />
@@ -1248,7 +1374,29 @@ re: fclean all
 <h3>ex00 Zombie hpp</h3>
 
 ```c++
+#ifndef ZOMBIE_HPP
+# define ZOMBIE_HPP
+# include <iostream>
+# include <string>
 
+class Zombie
+{
+    public:
+        Zombie();                               // Constructor
+        Zombie(std::string namePublic);         
+        ~Zombie();                              // Destructor
+        // getter
+	    std::string getName();                  // Obtener nombre Privado
+        // setter
+	    void    setName(std::string namePublic);// Guardar nombre 
+        void    announce(void);                 // Anunciar zombie
+
+    private:
+        std::string namePrivate;
+};
+    Zombie* newZombie(std::string namePublic);  // Crear Zombie en puntero
+	void randomChump(std::string namePublic);   // crear Zombie en Slack
+#endif
 ```
 
 <br /><br />
@@ -1258,7 +1406,38 @@ re: fclean all
 <h3>ex00 Zombie cpp</h3>
 
 ```c++
-
+#include "Zombie.hpp" 
+// Crea un Zombie, se le asigna "Unknown" como nombre ya que no se especifico
+Zombie::Zombie() : namePrivate("Unknown") 
+{  
+    std::cout << " " <<  this->namePrivate << " zombie creado" << std::endl;
+}
+// Crea un Zombie, se le asigna el nombre que se indica
+Zombie::Zombie(std::string namePublic)
+{
+	setName(namePublic);
+	std::cout << " " << namePrivate << " zombie creado" << std::endl;
+}
+// Se anuncia el Zommbie
+void Zombie::announce(void)
+{
+    std::cout << " " << namePrivate << ": BraiiiiiiinnnzzzZ..." << std::endl;
+}
+// Cuando el Zombie se destruye
+Zombie::~Zombie(void)
+{
+	std::cout << " " << namePrivate << " destruido" << std::endl;
+}
+// Obtener el nombre del Zomibe
+std::string Zombie::getName()
+{
+	return this->namePrivate;
+}
+// Guardar el nombre del Zomibe
+void Zombie::setName(std::string namePublic)
+{
+	namePrivate = namePublic;
+}
 ```
 
 <br /><br />
@@ -1268,7 +1447,14 @@ re: fclean all
 <h3>ex00 newZombie cpp</h3>
 
 ```c++
+#include "Zombie.hpp"
 
+Zombie *newZombie(std::string namePublic)
+{   
+	Zombie *newZ = new Zombie(namePublic);  // Creo un Zombie en un puntero
+	newZ -> announce();                     // Se anuncia el Zombie
+	return(newZ);                           // Se devuelve el Zombie para su uso
+}                                           // sera destruido al salir del programa
 ```
 
 <br /><br />
@@ -1279,7 +1465,13 @@ re: fclean all
 <h3>ex00 randomChump cpp</h3>
 
 ```c++
+#include "Zombie.hpp"
 
+void randomChump(std::string namePublic)
+{
+	Zombie Chump(namePublic);   // Creo un Zombie en un Slack (Pila)
+	Chump.announce();           // Se anuncia el Zombie
+}                               // Se destruye no pudiendo usarse
 ```
 
 <br /><br />
