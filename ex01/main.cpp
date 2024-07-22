@@ -3,40 +3,80 @@
 #include <cstring>
 #include "Zombie.hpp"
 
+void fn_continue()
+{
+    std::string  option;
+
+    std::cout << "\nEnter to continue." << std::endl;
+    std::getline(std::cin, option);   
+}
+
+bool isNumeric(const std::string& str)
+{
+  size_t i = 0;
+
+  while (i < str.length())
+    if (!isdigit(str[i++]))
+      return false;
+  return true;
+}
+
 int main(int argc, char **argv)
 {
     std::string  option; 
+    std::string  zombieName;
     bool    running = true;
     int     ioption = 0;
 
     if (argc == 1)
     {
-
+        int N = 4;
+        std::string s = "Paco";
+        Zombie *horde = zombieHorde(N,s);
+        delete[] (horde);
+        return(1);
     }
     else
     {  
-        std::cout << "\nElige:\n\t\"./main\" para ejecutar automaticamente.n\t\"./main \"manual\"\" para ejecutar manualmente." << std::endl;
+     if (strcmp(argv[1], "manual") == 0)
+        {
+            while(running)       
+            {
+                system("clear");
+                std::cout << "\nElige una opción:\n" << std::endl;
+                std::cout << " [1] Crea tu propia horda de zombis.\n";
+                std::cout << " [2] Salir." << std::endl;
+                std::cout << std::endl; 
+                std::getline(std::cin, option);
+
+                if (isNumeric(option))
+                    ioption = stoi(option);       
+                if (ioption == 1)
+                {
+                    std::cout << " Número de Zombies personalizado: ";
+                    std::getline(std::cin, zombieName);
+                     if (isNumeric(zombieName))
+                        ioption = stoi(zombieName);       
+                    if (ioption > 0)
+                    {
+                        std::cout << " Nombre Zombie personalizado: ";
+                        std::getline(std::cin, zombieName);
+                        Zombie *horde = zombieHorde(ioption,zombieName);
+                        delete[] (horde);
+                        std::cout << std::endl;                                                
+                    }
+                }                                          
+                else if (ioption == 2)
+                    running = false;
+                else
+                    std::cout << "\nLa próxima vez prueba a poner un número de la lista.\n" << std::endl;
+                if (running)
+                    fn_continue();        
+            }
+            system("clear");
+        }
+        else
+            std::cout << "\nElige:\n\t\"./main\" para ejecutar automaticamente.n\t\"./main \"manual\"\" para ejecutar manualmente." << std::endl;
     }    
     return (0);            
 }              
-/*
-<h3>Exercise 01: Moar brainz!</h3>
-
-Turn-in directory : ex01/<br />
-Files to turn in : Makefile, main.cpp, Zombie.{h, hpp}, Zombie.cpp, zombieHorde.cpp <br />
-Forbidden functions : None<br />
-
-¡Es hora de crear una **horda de zombis**!
-
-Implemente la siguiente función en el archivo apropiado:
-
-> Zombie* zombieHorde( int N, std::string name );
-
-Debe asignar N objetos Zombie en una única asignación. Luego, tiene que inicializar los zombies, dándole a cada uno de ellos el nombre pasado como parámetro. La función devuelve un puntero al primer zombie.
-
-Implemente sus propias pruebas para garantizar que su función zombieHorde() funcione como se esperaba.
-
-Intenta llamar a anunciar() para cada uno de los zombies.
-
-No olvides eliminar todos los zombies y comprobar si hay **pérdidas de memoria**.
-*/

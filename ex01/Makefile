@@ -3,7 +3,7 @@ NAME = main
 CC = c++
 CCFLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -rf
-SRCS = main.cpp #Zombie.cpp newZombie.cpp randomChump.cpp
+SRCS = main.cpp Zombie.cpp zombieHorde.cpp
 OBJS = ${SRCS:.cpp=.o}
 DEPS = ${SRCS:.cpp=.d}
 DEF_COLOR =     \033[0;39m
