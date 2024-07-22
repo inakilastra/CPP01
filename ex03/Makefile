@@ -10,7 +10,7 @@ DEF_COLOR =     \033[0;39m
 GREEN =         \033[0;92m
 YELLOW =        \033[0;93m
 ORANGE =		\033[38;5;209m
-## REGLAS                                                                     #
+## REGLAS
 %.o: %.cpp
 		@echo "\n${YELLOW} Compilando ✨ $< $(DEF_COLOR)"
 		@$(CC) $(CFLAGS) -c $^ -o $@	
