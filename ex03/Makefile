@@ -3,7 +3,7 @@ NAME = main
 CC = c++
 CCFLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -rf
-SRCS = main.cpp # Weapon.cpp HumanA.cpp HumanB.cpp
+SRCS = main.cpp Weapon.cpp # HumanA.cpp HumanB.cpp
 OBJS = ${SRCS:.cpp=.o}
 DEPS = ${SRCS:.cpp=.d}
 DEF_COLOR =     \033[0;39m

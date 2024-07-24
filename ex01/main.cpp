@@ -31,7 +31,7 @@ int main(int argc, char **argv)
     if (argc == 1)
     {
         int N = 4;
-        std::string s = "Paco";
+        std::string s = "Santiago";
         Zombie *horde = zombieHorde(N,s);
         delete[] (horde);
         return(1);
@@ -41,7 +41,7 @@ int main(int argc, char **argv)
      if (strcmp(argv[1], "manual") == 0)
         {
             while(running)       
-            {
+            {   
                 system("clear");
                 std::cout << "\nElige una opción:\n" << std::endl;
                 std::cout << " [1] Crea tu propia horda de zombis.\n";
@@ -49,8 +49,8 @@ int main(int argc, char **argv)
                 std::cout << std::endl; 
                 std::getline(std::cin, option);
 
-                if (isNumeric(option))
-                    ioption = stoi(option);       
+                if (isNumeric(option)) 
+                    ioption = stoi(option); 
                 if (ioption == 1)
                 {
                     std::cout << " Número de Zombies personalizado: ";
@@ -61,16 +61,16 @@ int main(int argc, char **argv)
                     {
                         std::cout << " Nombre Zombie personalizado: ";
                         std::getline(std::cin, zombieName);
-                        Zombie *horde = zombieHorde(ioption,zombieName);
-                        delete[] (horde);
+                        Zombie *horde = zombieHorde(ioption,zombieName); 
+                        delete[] (horde); 
                         std::cout << std::endl;                                                
                     }
                 }                                          
-                else if (ioption == 2)
+                else if (ioption == 2) 
                     running = false;
-                else
+                else 
                     std::cout << "\nLa próxima vez prueba a poner un número de la lista.\n" << std::endl;
-                if (running)
+                if (running) 
                     fn_continue();        
             }
             system("clear");

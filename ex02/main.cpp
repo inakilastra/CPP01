@@ -8,6 +8,7 @@ int main() {
   // Obtener la dirección de memoria de la variable string
   std::string* stringPTR = &my_string;  // Puntero al string
   std::string& stringREF = my_string;  // Referencia al string
+  // Una referencia actúa como un alias para una variable existente.
 
   // Imprimir direcciones de memoria
   std::cout << "Memory address of the string variable: " << &my_string << std::endl;

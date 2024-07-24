@@ -18,7 +18,7 @@ $(NAME): $(OBJS)
 		@${CC} ${CFLAGS} ${SRCS} -o ${NAME}
 		@echo "\n${YELLOW} ✅ ${GREEN}$(NAME) $(DEF_COLOR)\n"
 		@echo "\n\tTests -- Pruebas\n"
-		@echo "\n ${ORANGE}Para despertar una horda de Zombies ejecuta:"
+		@echo "\n ${ORANGE}Para despertar una horda de 4 Zombies ejecuta:"
 		@echo "\n ▶️ ${GREEN} ./main\n"
 		@echo "\n ${ORANGE}Para crear una horda de Zombies personalizada ejecuta:"
 		@echo "\n ▶️ ${GREEN} ./main \"manual\"$(DEF_COLOR)\n"		
