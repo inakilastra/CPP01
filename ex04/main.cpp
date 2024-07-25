@@ -30,16 +30,23 @@ std::string ft_read(char *fd)
 	return (text);
 }
 
-std::string ft_replace_str(std::string text, std::string s1, std::string s2)
+std::string ft_replace_str(std::string text, std::string s1, std::string s2, int show)
 {
+	int			i;
 	std::size_t pos;
 
+	i = 0;
 	pos = 0;
 	while ((pos = text.find(s1,pos)) != std::string::npos)
 	{
 		text.erase(pos, s1.length());
 		text.insert(pos, s2);
 		pos += s2.length(); 
+		i++;
+	}
+	if (i > 0 && show == 1)
+	{
+		std::cout << GREEN << "He cambiado " << i << " veces \"" << s1 << "\" por \"" << s2 << "\"" << DEF_COLOR << std::endl;
 	}
 	return (text);
 }
@@ -59,7 +66,7 @@ int main(int argc, char **argv)
 		std::cout << YELLOW << "No puede estar vacio el argumento 1 y/o 2" << DEF_COLOR << std::endl;
 		return (0);
 	}
-	if (ft_read(argv[1]) != ft_replace_str(ft_read(argv[1]), argv[2], argv[3]))
+	if (ft_read(argv[1]) != ft_replace_str(ft_read(argv[1]), argv[2], argv[3], 0))
 	{
 		newfile.open(argv[1] + std::string(".replace"));
 		if (!newfile.is_open())
@@ -67,7 +74,7 @@ int main(int argc, char **argv)
 			std::cout << "Failed to open the file" << std::endl;
 			exit(1);
 		}
-		newfile << ft_replace_str(ft_read(argv[1]), argv[2], argv[3]);
+		newfile << ft_replace_str(ft_read(argv[1]), argv[2], argv[3], 1);
 		newfile.close();
 	}
 	else
