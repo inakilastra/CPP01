@@ -14,7 +14,7 @@ std::string ft_read(char *fd)
 	File.open(fd);
 	if (!File.is_open()) 
 	{
-		std::cout << YELLOW << "No se puede abrir el fichero " << fd << DEF_COLOR << std::endl;
+		std::cout << YELLOW << "No se puede abrir el fichero: " << fd << DEF_COLOR << std::endl;
 		exit(1);
 	}
 	else
