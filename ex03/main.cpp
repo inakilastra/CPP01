@@ -7,6 +7,6 @@
 int main(void)
 {
     Weapon uno;
-    std::cout << " Zombie uno se llama " << uno.getType() << std::endl;
+    std::cout << " Zombie uno se llama  " << uno.getType() << std::endl;
     return (0);
 }
