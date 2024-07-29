@@ -28,9 +28,83 @@
 >
 > - :white_check_mark: [Zombie.cpp](#ex00-zombie-cpp)
 >
-> - :white_check_mark: [newZombie.cpp](#ex00-newZombie-cpp)
+> - :white_check_mark: [newZombie.cpp](#ex00-newzombie-cpp)
 >
 > - :white_check_mark: [randomChump.cpp](#ex00-randomChump-cpp)
+
+<br /><br />
+
+> Ficheros ex01  
+>
+> - :white_check_mark: [Makefile](#ex01-makefile) 
+>
+> - :white_check_mark: [main.cpp](#ex01-main)
+>
+> - :white_check_mark: [Zombie.hpp](#ex01-zombie-hpp)
+>
+> - :white_check_mark: [Zombie.cpp](#ex01-zombie-cpp)
+>
+> - :white_check_mark: [zombieHorde.cpp](#ex01-zombiehorde-cpp)
+
+<br /><br />
+
+> Ficheros ex02
+>
+> - :white_check_mark: [Makefile](#ex02-makefile) 
+>
+> - :white_check_mark: [main.cpp](#ex02-main)
+
+<br /><br />
+
+> Ficheros ex03
+>
+> - :white_check_mark: [Makefile](#ex03-makefile) 
+>
+> - :white_check_mark: [main.cpp](#ex03-main)
+>
+> - :white_check_mark: [Weapon.hpp](#ex03-weapon-hpp)
+>
+> - :white_check_mark: [Weapon.cpp](#ex03-weapon-cpp)
+>
+> - :white_check_mark: [HumanA.hpp](#ex03-humana-hpp)
+>
+> - :white_check_mark: [HumanA.cpp](#ex03-humana-cpp)
+>
+> - :white_check_mark: [HumanB.hpp](#ex03-humanb-hpp)
+>
+> - :white_check_mark: [HumanB.cpp](#ex03-humanb-cpp)
+
+<br /><br />
+
+> Ficheros ex04
+>
+> - :white_check_mark: [Makefile](#ex04-makefile) 
+>
+> - :white_check_mark: [main.cpp](#ex04-main)
+
+<br /><br />
+
+> Ficheros ex05
+>
+> - :white_check_mark: [Makefile](#ex05-makefile) 
+>
+> - :white_check_mark: [main.cpp](#ex05-main)
+>
+> - :white_check_mark: [Harl.hpp](#ex05-harl-hpp)
+>
+> - :white_check_mark: [Harl.cpp](#ex05-harl-cpp)
+
+<br /><br />
+
+> Ficheros ex06  
+>
+> - :white_check_mark: [Makefile](#ex06-makefile) 
+>
+> - :white_check_mark: [main.cpp](#ex06-main)
+>
+> - :white_check_mark: [Harl.hpp](#ex06-harl-hpp)
+>
+> - :white_check_mark: [Harl.cpp](#ex06-harl-cpp)
 
 <br /><br /><br /><br />
 
