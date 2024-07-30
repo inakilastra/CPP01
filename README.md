@@ -1317,7 +1317,7 @@ re: fclean all
 #include <cstring>
 #include "Zombie.hpp"
 
-void fn_continue()
+void fn_continue()  // Para detner el proceso antes de limpiar la pantalla
 {
     std::string  option;
 
@@ -1325,7 +1325,7 @@ void fn_continue()
     std::getline(std::cin, option);   
 }
 
-bool isNumeric(const std::string& str)
+bool isNumeric(const std::string& str) // Comprobar que el string es un número
 {
   size_t i = 0;
 
@@ -1341,27 +1341,27 @@ int main(int argc, char **argv)
     bool    running = true;
     int     ioption = 0;
 
-    if (argc == 1)
+    if (argc == 1) // Si no tiene argumentos ejecuto automaticamente
     {
         std::cout << std::endl;
 
-        Zombie uno;
+        Zombie uno; // Creo un Zombie sin nombre (zombie uno)
         std::cout << " Zombie uno se llama " << uno.getName() << std::endl;
         uno.announce();
         std::cout << " dirección de memoria: " << &uno << std::endl;
         std::cout << std::endl;
-        Zombie dos("Michael");
+        Zombie dos("Michael"); // Creo un Zombie llamado Mivhael (zombie dos)
         std::cout << " Zombie dos se llama " << dos.getName() << std::endl;
         dos.announce();
         std::cout << " dirección de memoria: " << &dos << std::endl;
         std::cout << std::endl;
-        Zombie tres(uno);
+        Zombie tres(uno); // Creo un Zombie clonando el uno (zombie tres)
         std::cout << " > Zombie tres(uno) " << std::endl;
         std::cout << " Zombie tres se llama  " << tres.getName() << std::endl;
         tres.announce();
         std::cout << " dirección de memoria: " << &tres << std::endl;
         std::cout << std::endl;
-        tres = dos;
+        tres = dos; // Clono el dos (zombie tres)
         std::cout << " > tres = dos " << std::endl;
         std::cout << " Zombie tres se llama  " << tres.getName() << std::endl;
         tres.announce();
@@ -1736,7 +1736,26 @@ int main(int argc, char **argv)
 <h3>ex01 Zombie hpp</h3>
 
 ```c++
+#ifndef ZOMBIE_HPP
+# define ZOMBIE_HPP
+# include <iostream>
+# include <string>
 
+class Zombie
+{
+    public:
+        Zombie();
+        Zombie(std::string namePublic);
+        ~Zombie();
+        std::string getName();
+	    void    setName(std::string namePublic);
+        void    announce(void);
+
+    private:
+        std::string namePrivate;
+};
+    Zombie* zombieHorde( int N, std::string name );
+#endif
 ```
 
 <br /><br />
@@ -1746,7 +1765,37 @@ int main(int argc, char **argv)
 <h3>ex01 Zombie cpp</h3>
 
 ```c++
+#include "Zombie.hpp" 
 
+Zombie::Zombie() : namePrivate("Unknown") 
+{  
+    std::cout << " " <<  this->namePrivate << " zombie creado" << std::endl;
+}
+
+Zombie::Zombie(std::string namePublic)
+{
+	setName(namePublic);
+	std::cout << " " << namePrivate << " zombie creado" << std::endl;
+}
+void Zombie::announce(void)
+{
+    std::cout << " " << namePrivate << ": BraiiiiiiinnnzzzZ..." << std::endl;
+}
+
+Zombie::~Zombie(void)
+{
+	std::cout << " " << namePrivate << " destruido" << std::endl;
+}
+
+std::string Zombie::getName()
+{
+	return this->namePrivate;
+}
+
+void Zombie::setName(std::string namePublic)
+{
+	namePrivate = namePublic;
+}
 ```
 
 <br /><br />
@@ -1756,7 +1805,22 @@ int main(int argc, char **argv)
 <h3>ex01 zombieHorde cpp</h3>
 
 ```c++
+#include "Zombie.hpp"
 
+Zombie* zombieHorde( int N, std::string namePublic )
+{
+    int i = 0;
+	
+    Zombie *zombie = new Zombie[N];
+    while(i < N)
+	{
+        
+        zombie[i].setName(namePublic);
+        zombie[i].announce();
+        i++;
+    }
+    return (zombie);
+}
 ```
 
 <br /><br />
@@ -1849,7 +1913,30 @@ re: fclean all
 <h3>ex02 main</h3>
 
 ```c++
+#include <iostream>
+#include <string>
 
+int main() {
+  // Variable string
+  std::string my_string = "HI THIS IS BRAIN";
+
+  // Obtener la dirección de memoria de la variable string
+  std::string* stringPTR = &my_string;  // Puntero al string
+  std::string& stringREF = my_string;  // Referencia al string
+  // Una referencia actúa como un alias para una variable existente.
+
+  // Imprimir direcciones de memoria
+  std::cout << "Memory address of the string variable: " << &my_string << std::endl;
+  std::cout << "Memory address held by stringPTR: " << stringPTR << std::endl;
+  std::cout << "Memory address held by stringREF: " << &stringREF << std::endl;
+
+  // Imprimir valores
+  std::cout << "\nValue of the string variable: " << my_string << std::endl;
+  std::cout << "Value pointed to by stringPTR: " << *stringPTR << std::endl;
+  std::cout << "Value pointed to by stringREF: " << stringREF << std::endl;
+
+  return 0;
+}
 ```
 
 <br /><br />
@@ -1942,7 +2029,29 @@ re: fclean all
 <h3>ex03 main</h3>
 
 ```c++
+#include "Weapon.hpp"
+#include "HumanA.hpp"
+#include "HumanB.hpp"
 
+int main()
+{
+    {
+        Weapon club = Weapon("crude spiked club");
+        HumanA bob("Bob", club);
+        bob.attack();
+        club.setType("some other type of club");
+        bob.attack();
+    }
+    {
+        Weapon club = Weapon("crude spiked club");
+        HumanB jim("Jim");
+        jim.setWeapon(club);
+        jim.attack();
+        club.setType("some other type of club");
+        jim.attack();
+    }
+    return (0);
+}
 ```
 
 <br /><br />
@@ -1952,7 +2061,23 @@ re: fclean all
 <h3>ex03 Weapon hpp</h3>
 
 ```c++
+#ifndef WEAPON_HPP
+# define WEAPON_HPP
+# include <iostream>
 
+class Weapon {
+public:
+    Weapon();                               // Constructor por defecto
+	Weapon(std::string weapon);             // Constructor con argumento
+    ~Weapon();                              // Destruir
+    void setType(std::string type);  // Asignar tipo de arma
+    std::string getType();     // Obtener tipo de arma
+
+private:
+    std::string _type;
+};
+
+#endif
 ```
 
 <br /><br />
@@ -1962,7 +2087,33 @@ re: fclean all
 <h3>ex03 Weapon cpp</h3>
 
 ```c++
+#include "Weapon.hpp"
 
+Weapon::Weapon(void)
+{
+	this->_type = "Undefined type Weapon";
+	std::cout << " " <<  this->_type << " created" << std::endl;
+}
+
+Weapon::Weapon(std::string weapon): _type(weapon)
+{
+	std::cout << " " <<  this->_type << " type weapon created" << std::endl;
+}
+
+Weapon::~Weapon(void)
+{
+	std::cout << " " << _type << " destroyed" << std::endl;
+}
+
+void	Weapon::setType(std::string newtype)
+{
+	this->_type = newtype;
+}
+
+std::string	Weapon::getType(void)
+{
+	return (this->_type);
+}
 ```
 
 <br /><br />
@@ -1972,7 +2123,25 @@ re: fclean all
 <h3>ex03 HumanA hpp</h3>
 
 ```c++
+#ifndef HumanA_HPP
+# define HumanA_HPP
 
+#include <string>
+#include <iostream>
+#include "Weapon.hpp"
+
+class HumanA
+{
+    public:
+	    HumanA(std::string name, Weapon &weapon);
+	    ~HumanA() {};
+	    void	attack();
+    private:
+	    std::string name;
+	    Weapon &weapon;    
+};
+
+#endif
 ```
 
 <br /><br />
@@ -1982,7 +2151,19 @@ re: fclean all
 <h3>ex03 HumanA cpp</h3>
 
 ```c++
+#include "HumanA.hpp"
 
+#include <string>
+#include <iostream>
+
+void HumanA::attack()
+{
+	std::cout << name << " attacks with their " << weapon.getType() << std::endl;
+}
+
+HumanA::HumanA (std::string name, Weapon &weapon): name(name), weapon(weapon)
+{
+}
 ```
 
 <br /><br />
@@ -1992,7 +2173,24 @@ re: fclean all
 <h3>ex03 HumanB hpp</h3>
 
 ```c++
+#ifndef HumanB_HPP
+# define HumanB_HPP
 
+#include "Weapon.hpp"
+
+class HumanB
+{
+    public:
+	    HumanB(std::string name);
+	    ~HumanB() {};
+	    void	attack();
+		void setWeapon(Weapon &weapon);
+    private:
+	    std::string name;
+	    Weapon *weapon;    
+};
+
+#endif
 ```
 
 <br /><br />
@@ -2002,7 +2200,27 @@ re: fclean all
 <h3>ex03 HumanB cpp</h3>
 
 ```c++
+#include "HumanB.hpp"
 
+void HumanB::setWeapon(Weapon &newweapon)
+{
+	this->weapon = &newweapon;
+}
+
+void HumanB::attack()
+{
+	if (!this->weapon)
+	{
+		std::cout << name << " has no weapon" << std::endl;
+	}
+	else
+		std::cout << name << " attacks with their " << weapon->getType() << std::endl;
+}
+
+HumanB::HumanB (std::string name): name(name)
+{
+	this->weapon = nullptr;
+}
 ```
 
 <br /><br />
@@ -2097,7 +2315,91 @@ re: fclean all
 <h3>ex04 main</h3>
 
 ```c++
+#include <iostream>    
+#include <string>
+#include <fstream>
+#define DEF_COLOR "\033[0m" 
+#define YELLOW    "\033[0;93m"
+#define GREEN     "\033[0;92m"
 
+std::string ft_read(char *fd)
+{
+	std::ifstream File;
+	std::string text;
+	std::string line;
+
+	File.open(fd);
+	if (!File.is_open()) 
+	{
+		std::cout << YELLOW << "No se puede abrir el fichero: " << fd << DEF_COLOR << std::endl;
+		exit(1);
+	}
+	else
+	{
+		while (!File.eof())
+		{
+			std::getline(File, line);
+			text += line;
+			text += '\n';
+		}
+	}
+	File.close();
+	return (text);
+}
+
+std::string ft_replace_str(std::string text, std::string s1, std::string s2, int show)
+{
+	int			i;
+	std::size_t pos;
+
+	i = 0;
+	pos = 0;
+	while ((pos = text.find(s1,pos)) != std::string::npos)
+	{
+		text.erase(pos, s1.length());
+		text.insert(pos, s2);
+		pos += s2.length(); 
+		i++;
+	}
+	if (i > 0 && show == 1)
+	{
+		std::cout << GREEN << "He cambiado " << i << " veces \"" << s1 << "\" por \"" << s2 << "\"" << DEF_COLOR << std::endl;
+	}
+	return (text);
+}
+
+int main(int argc, char **argv)
+{
+	std::string text;
+	std::ofstream newfile;
+
+	if (argc != 4)
+	{
+		std::cout << YELLOW << "Número de argumentos incorrecto (prueba a poner 4)" << DEF_COLOR << std::endl;
+		return (0);
+	}
+    else if (!argv[1][0] || !argv[2][0])
+	{
+		std::cout << YELLOW << "No puede estar vacio el argumento 1 y/o 2" << DEF_COLOR << std::endl;
+		return (0);
+	}
+	if (ft_read(argv[1]) != ft_replace_str(ft_read(argv[1]), argv[2], argv[3], 0))
+	{
+		newfile.open(argv[1] + std::string(".replace"));
+		if (!newfile.is_open())
+		{
+			std::cout << "Failed to open the file" << std::endl;
+			exit(1);
+		}
+		newfile << ft_replace_str(ft_read(argv[1]), argv[2], argv[3], 1);
+		newfile.close();
+	}
+	else
+	{
+		std::cout << YELLOW << "no crear nuevo fichero" << DEF_COLOR << std::endl;
+	}
+	return (0);
+}
 ```
 
 <br /><br />
@@ -2190,7 +2492,86 @@ re: fclean all
 <h3>ex05 main</h3>
 
 ```c++
+#include <iostream>
+#include <string>
+#include <fstream>
 
+#include "Harl.hpp"
+
+void fn_continue()
+{
+    std::string  option;
+
+    std::cout << "\nEnter to continue." << std::endl;
+    std::getline(std::cin, option);   
+}
+
+bool isNumeric(const std::string& str)
+{
+  size_t i = 0;
+
+  while (i < str.length())
+    if (!isdigit(str[i++]))
+      return false;
+  return true;
+}
+
+int main(void)
+{
+	Harl harl;
+
+    std::string  option; 
+    bool    running = true;
+    int     ioption = 0;
+
+    while(running)       
+    {   
+        system("clear");
+        std::cout << "\nElige una opción:\n" << std::endl;
+        std::cout << " [1] DEBUG\n";
+        std::cout << " [2] INFO\n";
+        std::cout << " [3] WARNING\n";
+        std::cout << " [4] ERROR\n";
+        std::cout << " [5] Salir." << std::endl;
+        std::cout << std::endl; 
+        std::getline(std::cin, option);
+
+        if (isNumeric(option)) 
+            ioption = stoi(option); 
+        if (ioption >= 1 && ioption <= 4)
+        {
+            switch (ioption)
+            {
+                case 1:
+                    std::cout << "DEBUG:\n";
+                    harl.complain("DEBUG");
+                    break;
+                case 2:
+                    std::cout << "INFO:\n";
+                    harl.complain("INFO");
+                    break;
+                case 3:
+                    std::cout << "WARNING:\n";
+                    harl.complain("WARNING");
+                    break;
+                case 4:
+                    std::cout << "ERROR:\n";
+                    harl.complain("ERROR");
+                    break;
+                default:
+                    break;
+            }
+        }
+        else if (ioption == 5) 
+            running = false;
+        else 
+            std::cout << "\nLa próxima vez prueba a poner un número de la lista.\n" << std::endl;
+        if (running) 
+            fn_continue();        
+    }
+    system("clear");        
+	return (0);
+}
 ```
 
 <br /><br />
@@ -2200,7 +2581,27 @@ re: fclean all
 <h3>ex05 Harl hpp</h3>
 
 ```c++
+#ifndef Harl_HPP
+# define Harl_HPP
 
+#include <iostream>
+#include <string>
+#include <fstream>
+
+class Harl
+{
+    public:
+		Harl();
+	    ~Harl();		
+    	void complain(std::string level);    
+	private:
+    	void debug();
+    	void info();
+    	void warning();
+    	void error();
+};
+
+#endif
 ```
 
 <br /><br />
@@ -2210,7 +2611,48 @@ re: fclean all
 <h3>ex05 Harl cpp</h3>
 
 ```c++
+#include "Harl.hpp"
 
+Harl::Harl()
+{
+    std::cout << "Harl constructor" << std::endl;
+}
+Harl::~Harl()
+{
+    std::cout << "Harl destructor" << std::endl;
+}
+void Harl::complain( std::string level )
+{
+	std::string	option[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+	void		(Harl::*complainPTR[4])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
+	int i =0;
+	while (i < 4)
+	{
+		if (level == option[i])
+		{
+			(this->*complainPTR[i])();
+			return ;
+		}
+		i++;
+	}
+	std::cout << "Entrada incorrecta" << std::endl;
+}
+void Harl::debug()
+{
+	std::cout << "Me encanta tener tocino adicional para mi hamburguesa 7XL con doble queso, triple pepinillos y ketchup especial. ¡De verdad que me encanta!\n";
+}
+void Harl::info()
+{
+	std::cout << "No puedo creer que agregar tocino adicional cueste más dinero. ¡No pusiste suficiente tocino en mi hamburguesa! Si lo hubieras hecho, ¡no estaría pidiendo más!\n";
+}
+void Harl::warning()
+{
+	std::cout << "Creo que merezco tener un poco de tocino adicional gratis. He estado viniendo durante años, mientras que tú comenzaste a trabajar aquí desde el mes pasado\n";
+}
+void Harl::error()
+{
+	std::cout << "¡Esto es inaceptable! Quiero hablar con el gerente ahora.\n";
+}
 ```
 
 <br /><br />
@@ -2223,7 +2665,7 @@ re: fclean all
 # **************************************************************************** #
 # VARIABLES                                                                    #
 # NAME: Define el nombre de la biblioteca que se creará.                       #
-NAME = main
+NAME = harlFilter
 # CC: Especifica el compilador a usar.                                         #
 CC = c++
 # CCFLAGS: Define las opciones del compilador                                  #
@@ -2308,7 +2750,26 @@ re: fclean all
 <h3>ex06 main</h3>
 
 ```c++
+#include <iostream>
+#include <string>
+#include <fstream>
 
+#include "Harl.hpp"
+
+
+int main(int argc, char **argv)
+{
+	Harl harl;
+
+	if (argc != 2)
+	{
+		std::cout << "Es oblicatorio 2 argumentos" << std::endl;
+		return (0);
+	}
+    harl.complain(argv[1]);
+       
+	return (0);
+}
 ```
 
 <br /><br />
@@ -2318,7 +2779,27 @@ re: fclean all
 <h3>ex06 Harl hpp</h3>
 
 ```c++
+#ifndef Harl_HPP
+# define Harl_HPP
 
+#include <iostream>
+#include <string>
+#include <fstream>
+
+class Harl
+{
+    public:
+		Harl();
+	    ~Harl();		
+    	void complain(std::string level);    
+	private:
+    	void debug();
+    	void info();
+    	void warning();
+    	void error();
+};
+
+#endif
 ```
 
 <br /><br />
@@ -2328,7 +2809,54 @@ re: fclean all
 <h3>ex06 Harl cpp</h3>
 
 ```c++
+#include "Harl.hpp"
 
+Harl::Harl()
+{
+    std::cout << "Harl constructor\n" << std::endl;
+}
+Harl::~Harl()
+{
+    std::cout << "Harl destructor\n" << std::endl;
+}
+void Harl::complain( std::string level )
+{
+	void		(Harl::*complainPTR[4])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
+	std::string	option[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+	int i = 0;
+	int j = 5;
+	while (i < 4)
+	{
+		if (level == option[i])
+		{
+			j = i;
+		}
+		i++;
+	}
+	while (j < 4)
+	{
+		(this->*complainPTR[j])();
+		j++;
+	}
+	if (j != 4)
+		std::cout << "[ Probablemente se esté quejando de problemas insignificantes ]" << std::endl;
+}
+void Harl::debug()
+{
+	std::cout << "Me encanta tener tocino adicional para mi hamburguesa 7XL con doble queso, triple pepinillos y ketchup especial. ¡De verdad que me encanta!\n\n";
+}
+void Harl::info()
+{
+	std::cout << "No puedo creer que agregar tocino adicional cueste más dinero. ¡No pusiste suficiente tocino en mi hamburguesa! Si lo hubieras hecho, ¡no estaría pidiendo más!\n\n";
+}
+void Harl::warning()
+{
+	std::cout << "Creo que merezco tener un poco de tocino adicional gratis. He estado viniendo durante años, mientras que tú comenzaste a trabajar aquí desde el mes pasado\n\n";
+}
+void Harl::error()
+{
+	std::cout << "¡Esto es inaceptable! Quiero hablar con el gerente ahora.\n\n";
+}
 ```
 
 <br /><br />
