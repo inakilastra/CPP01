@@ -3,6 +3,8 @@
 #include <cstring>
 #include "Zombie.hpp"
 
+// Pausar la ejecución del programa y esperar 
+// a que el usuario presione Enter para continuar.
 void fn_continue()
 {
     std::string  option;
@@ -11,6 +13,7 @@ void fn_continue()
     std::getline(std::cin, option);   
 }
 
+// Verificar si una cadena de texto contiene solo números.
 bool isNumeric(const std::string& str)
 {
   size_t i = 0;
@@ -28,7 +31,7 @@ int main(int argc, char **argv)
     bool    running = true;
     int     ioption = 0;
 
-    if (argc == 1)
+    if (argc == 1) // Main Sin argumentos
     {
         int N = 4;
         std::string s = "Santiago";
@@ -37,21 +40,21 @@ int main(int argc, char **argv)
         return(1);
     }
     else
-    {  
+    {  // Main con Argumento "manual"
      if (strcmp(argv[1], "manual") == 0)
         {
             while(running)       
-            {   
-                system("clear");
+            {   // Menú manual
+                system("clear"); // Limpio la consola 
                 std::cout << "\nElige una opción:\n" << std::endl;
                 std::cout << " [1] Crea tu propia horda de zombis.\n";
                 std::cout << " [2] Salir." << std::endl;
                 std::cout << std::endl; 
                 std::getline(std::cin, option);
-
-                if (isNumeric(option)) 
-                    ioption = stoi(option); 
-                if (ioption == 1)
+                // Convierto la entrada de teclado en int 
+                if (isNumeric(option)) // Si es número
+                    ioption = stoi(option); // Lo paso a la variable
+                if (ioption == 1) // Crear horda personalizada
                 {
                     std::cout << " Número de Zombies personalizado: ";
                     std::getline(std::cin, zombieName);
@@ -61,16 +64,16 @@ int main(int argc, char **argv)
                     {
                         std::cout << " Nombre Zombie personalizado: ";
                         std::getline(std::cin, zombieName);
-                        Zombie *horde = zombieHorde(ioption,zombieName); 
-                        delete[] (horde); 
+                        Zombie *horde = zombieHorde(ioption,zombieName); // creo la horda con los argumentos dados
+                        delete[] (horde); // Destruyo la horda
                         std::cout << std::endl;                                                
                     }
                 }                                          
-                else if (ioption == 2) 
+                else if (ioption == 2) // Opción 2: Salir del bucle
                     running = false;
-                else 
+                else  // Opción inválida seleccionada
                     std::cout << "\nLa próxima vez prueba a poner un número de la lista.\n" << std::endl;
-                if (running) 
+                if (running) // Pausa para continuar
                     fn_continue();        
             }
             system("clear");
@@ -79,4 +82,4 @@ int main(int argc, char **argv)
             std::cout << "\nElige:\n\t\"./main\" para ejecutar automaticamente.n\t\"./main \"manual\"\" para ejecutar manualmente." << std::endl;
     }    
     return (0);            
-}              
+}  

@@ -3,7 +3,7 @@
 #include <cstring>
 #include "Zombie.hpp"
 
-void fn_continue()
+void fn_continue()  // Para detner el proceso antes de limpiar la pantalla
 {
     std::string  option;
 
@@ -11,7 +11,7 @@ void fn_continue()
     std::getline(std::cin, option);   
 }
 
-bool isNumeric(const std::string& str)
+bool isNumeric(const std::string& str) // Comprobar que el string es un número
 {
   size_t i = 0;
 
@@ -27,27 +27,27 @@ int main(int argc, char **argv)
     bool    running = true;
     int     ioption = 0;
 
-    if (argc == 1)
+    if (argc == 1) // Si no tiene argumentos ejecuto automaticamente
     {
         std::cout << std::endl;
 
-        Zombie uno;
+        Zombie uno; // Creo un Zombie sin nombre (zombie uno)
         std::cout << " Zombie uno se llama " << uno.getName() << std::endl;
         uno.announce();
         std::cout << " dirección de memoria: " << &uno << std::endl;
         std::cout << std::endl;
-        Zombie dos("Michael");
+        Zombie dos("Michael"); // Creo un Zombie llamado Mivhael (zombie dos)
         std::cout << " Zombie dos se llama " << dos.getName() << std::endl;
         dos.announce();
         std::cout << " dirección de memoria: " << &dos << std::endl;
         std::cout << std::endl;
-        Zombie tres(uno);
+        Zombie tres(uno); // Creo un Zombie clonando el uno (zombie tres)
         std::cout << " > Zombie tres(uno) " << std::endl;
         std::cout << " Zombie tres se llama  " << tres.getName() << std::endl;
         tres.announce();
         std::cout << " dirección de memoria: " << &tres << std::endl;
         std::cout << std::endl;
-        tres = dos;
+        tres = dos; // Clono el dos (zombie tres)
         std::cout << " > tres = dos " << std::endl;
         std::cout << " Zombie tres se llama  " << tres.getName() << std::endl;
         tres.announce();
@@ -125,4 +125,3 @@ int main(int argc, char **argv)
     }    
     return (0);            
 } 
-
